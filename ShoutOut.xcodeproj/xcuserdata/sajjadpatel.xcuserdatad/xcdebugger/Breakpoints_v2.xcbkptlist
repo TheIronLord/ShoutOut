@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoutOut/CoreDataStack.swift"
+            timestampString = "543597852.994691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "createMainContext()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoutOut/AppDelegate.swift"
+            timestampString = "543597852.994768"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoutOut/AppDelegate.swift"
+            timestampString = "543597852.995069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoutOut/ShoutOutDraftsViewController.swift"
+            timestampString = "543597852.9952689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShoutOut.ShoutOutDraftsViewController.prepare(for: __ObjC.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "ShoutOut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sajjadpatel/XCodeStudioProjects/ShoutOut/ShoutOut/ShoutOutDraftsViewController.swift"
+                  timestampString = "543597853.003119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1527">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShoutOut.ShoutOutDraftsViewController.prepare(for: __ObjC.UIStoryboardSegue, sender: Swift.Optional&lt;Any&gt;) -&gt; ()"
+                  moduleName = "ShoutOut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sajjadpatel/XCodeStudioProjects/ShoutOut/ShoutOut/ShoutOutDraftsViewController.swift"
+                  timestampString = "543597853.006282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1578">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
