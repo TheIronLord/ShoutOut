@@ -12,12 +12,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		let mainContext = createMainContext()
-		let firstViewController = getFirstViewController()
-		firstViewController.managedObjectContext = mainContext
-        
-        let dataService = DataService(managedObjectContext: mainContext)
-        dataService.seedEmployees()
+        createMainContext{
+            container in
+            let mainContext = container.viewContext
+            
+            let dataService = DataService(managedObjectContext: mainContext)
+            dataService.seedEmployees()
+            
+            let storyboard = self.window?.rootViewController?.storyboard
+            
+            guard let rootVC = storyboard?.instantiateViewController(withIdentifier: "RootViewController") else{
+                fatalError("Could not instantiate root view contoller")
+            }
+            
+            self.window?.rootViewController = rootVC
+            
+            let firstViewController = self.getFirstViewController()
+            firstViewController.managedObjectContext = mainContext
+        }
 		
 		return true
 	}

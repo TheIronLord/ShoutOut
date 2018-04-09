@@ -9,28 +9,22 @@
 import Foundation
 import CoreData
 
-func createMainContext() -> NSManagedObjectContext {
-	
-	// Initialize NSManagedObjectModel
-	let modelURL = Bundle.main.url(forResource: "ShoutOut", withExtension: "momd")
-	guard let model = NSManagedObjectModel(contentsOf: modelURL!) else { fatalError("model not found") }
-	
-	// Configure NSPersistentStoreCoordinator with an NSPersistentStore
-	let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
-	let storeURL = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
+func createMainContext(completion: @escaping (NSPersistentContainer) -> Void) {
+	let container = NSPersistentContainer(name: "ShoutOut")
     
-    let pscOptions = [
-        NSMigratePersistentStoresAutomaticallyOption: true,
-        NSInferMappingModelAutomaticallyOption: true
-    ]
+    let storeURL = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
+    let storeDescription = NSPersistentStoreDescription(url: storeURL)
+    container.persistentStoreDescriptions = [storeDescription]
     
-	try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: pscOptions)
-	
-	// Create and return NSManagedObjectContext
-	let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-	context.persistentStoreCoordinator = psc
-	
-	return context
+    container.loadPersistentStores(completionHandler: {
+        persistentStoreDescription, error in
+        
+        guard error == nil else { fatalError("Failed to load store: \(error)") }
+        
+        DispatchQueue.main.async {
+            completion(container)
+        }
+    })
 }
 
 extension URL {
