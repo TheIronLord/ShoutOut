@@ -36,6 +36,7 @@
 /* Begin PBXFileReference section */
 		C82083A22074329F008AA32D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C82083A420743508008AA32D /* SaveAccessDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAccessDelete.swift; sourceTree = "<group>"; };
+		C828D2A4207BB56400DC2999 /* ShoutOut 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ShoutOut 2.xcdatamodel"; sourceTree = "<group>"; };
 		C8CF98B92072E04600F70DB9 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		C8FCC4EB206BE397008CB4ED /* ShoutOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOut.swift; sourceTree = "<group>"; };
 		F23FB59D1DC68DEB00C42952 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
@@ -485,9 +486,10 @@
 		F23FB59C1DC68DEB00C42952 /* ShoutOut.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C828D2A4207BB56400DC2999 /* ShoutOut 2.xcdatamodel */,
 				F23FB59D1DC68DEB00C42952 /* ShoutOut.xcdatamodel */,
 			);
-			currentVersion = F23FB59D1DC68DEB00C42952 /* ShoutOut.xcdatamodel */;
+			currentVersion = C828D2A4207BB56400DC2999 /* ShoutOut 2.xcdatamodel */;
 			path = ShoutOut.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
