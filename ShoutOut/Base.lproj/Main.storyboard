@@ -211,7 +211,7 @@ Just thought this deserved a shout out. Great work, Jane!
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8Xf-id-FMe"/>
                                     <barButtonItem systemItem="trash" id="VX3-Ya-Bta">
                                         <connections>
-                                            <action selector="deleteButtonTapped:" destination="Sgy-Bp-bSa" id="JyO-yQ-VtQ"/>
+                                            <action selector="deleteButtonTapped:" destination="Sgy-Bp-bSa" id="TQn-e8-Wot"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="4yV-Sh-3YW"/>

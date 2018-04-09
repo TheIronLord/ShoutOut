@@ -27,21 +27,17 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
 		
         fetchEmployees()
         
-        let shoutOutFetchRequest = NSFetchRequest<ShoutOut>(entityName: ShoutOut.entityName)
-        do {
-            let shoutOuts = try self.managedObjectContext.fetch(shoutOutFetchRequest)
-            print(shoutOuts)
-        } catch _ {}
-        
         self.toEmployeePicker.dataSource = self
         self.toEmployeePicker.delegate = self
         toEmployeePicker.tag = 0
         
         self.shoutCategoryPicker.dataSource = self
         self.shoutCategoryPicker.delegate = self
-        toEmployeePicker.tag = 1
+        self.shoutCategoryPicker.tag = 1
         
-        self.shoutOut = NSEntityDescription.insertNewObject(forEntityName: ShoutOut.entityName, into: managedObjectContext) as! ShoutOut
+        self.shoutOut = self.shoutOut ?? NSEntityDescription.insertNewObject(forEntityName: ShoutOut.entityName, into: managedObjectContext) as! ShoutOut
+        
+        setUIValues()
         
 		messageTextView.layer.borderWidth = CGFloat(0.5)
 		messageTextView.layer.borderColor = UIColor(colorLiteralRed: 204/255, green: 204/255, blue: 204/255, alpha: 1.0).cgColor
@@ -49,6 +45,17 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
 		messageTextView.clipsToBounds = true
 	}
 
+    func setUIValues() {
+        let selectedEmployeeRow = self.employees.index(of: self.shoutOut.toEmployee) ?? 0
+        self.toEmployeePicker.selectRow(selectedEmployeeRow, inComponent: 0, animated: false)
+        
+        let selectedShoutOutRow = self.shoutCategories.index(of: self.shoutOut.shoutCategory) ?? 0
+        self.shoutCategoryPicker.selectRow(selectedShoutOutRow, inComponent: 0, animated: false)
+        
+        self.messageTextView.text = self.shoutOut.message
+        self.fromTextField.text = self.shoutOut.from
+    }
+    
     func fetchEmployees() {
         let employeeFetchRequest = NSFetchRequest<Employee>(entityName: Employee.entityName)
         let lastNameSortDescriptor = NSSortDescriptor(key: #keyPath(Employee.lastName), ascending: true)
@@ -59,7 +66,7 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
             self.employees = try self.managedObjectContext.fetch(employeeFetchRequest)
         }catch _ {
             employees = []
-            print("Something went wrong: \(Error)")
+            print("Something went wrong")
         }
     }
     
@@ -109,6 +116,6 @@ class ShoutOutEditorViewController: UIViewController, ManagedObjectContextDepend
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let employee = self.employees[row]
-        return pickerView.tag == 0 ? "\(employee.firstName) \(employee.lastName)" : self.shoutCategories[row]
+        return ((pickerView.tag == 0) ? "\(employee.firstName) \(employee.lastName)" : self.shoutCategories[row])
     }
 }
